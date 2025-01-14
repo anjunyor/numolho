@@ -11,7 +11,7 @@ export function Home() {
     <div className="min-h-screen bg-black text-white">
       <header className="bg-black py-6 px-4 text-center border-b border-yellow-500">
         <img 
-          src="https://images.unsplash.com/photo-1619740455993-9e612b1af08a?w=400&h=100&fit=crop" 
+          src="logo.png" 
           alt="Nu Molho Logo" 
           className="h-20 mx-auto mb-4"
         />
