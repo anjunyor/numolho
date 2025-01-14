@@ -1,7 +1,5 @@
 import React from 'react';
 import { menuItems } from '../data/menuItems';
-import { MenuItem } from '../components/MenuItem';
-import { CartButton } from '../components/CartButton';
 
 export function Home() {
   const hotdogs = menuItems.filter(item => item.category === 'hotdog');
@@ -11,7 +9,7 @@ export function Home() {
     <div className="min-h-screen bg-black text-white">
       <header className="bg-black py-6 px-4 text-center border-b border-yellow-500">
         <img 
-          src="src\images\logo.jpg" 
+          src="https://images.unsplash.com/photo-1619740455993-9e612b1af08a?w=400&h=100&fit=crop" 
           alt="Nu Molho Logo" 
           className="h-20 mx-auto mb-4"
         />
@@ -25,7 +23,17 @@ export function Home() {
           </div>
           <div className="space-y-4">
             {hotdogs.map(item => (
-              <MenuItem key={item.id} item={item} />
+              <div key={item.id} className="block p-4 rounded-lg hover:bg-gray-900">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="font-bold text-yellow-500">{item.title}</h3>
+                    {item.description && (
+                      <p className="text-gray-400 text-sm mt-1">{item.description}</p>
+                    )}
+                  </div>
+                  <span className="font-bold text-yellow-500">{item.price}</span>
+                </div>
+              </div>
             ))}
           </div>
         </section>
@@ -37,7 +45,14 @@ export function Home() {
           </div>
           <div className="space-y-4">
             {bebidas.map(item => (
-              <MenuItem key={item.id} item={item} />
+              <div key={item.id} className="block p-4 rounded-lg hover:bg-gray-900">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="font-bold text-yellow-500">{item.title}</h3>
+                  </div>
+                  <span className="font-bold text-yellow-500">{item.price}</span>
+                </div>
+              </div>
             ))}
           </div>
         </section>
@@ -54,7 +69,7 @@ export function Home() {
           <div className="bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg mb-4">
             EMBALAGEM P/ VIAGEM
           </div>
-          <p className="text-center">R$ 1,00 cada</p>
+          <p className="text-center text-white">R$ 1,00 cada</p>
         </section>
 
         {/* Pagamento Section */}
@@ -62,7 +77,7 @@ export function Home() {
           <div className="bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg mb-4">
             PAGAMENTO
           </div>
-          <ul className="list-none space-y-2">
+          <ul className="list-none space-y-2 text-white">
             <li>PIX</li>
             <li>Débito</li>
             <li>Crédito</li>
@@ -77,7 +92,7 @@ export function Home() {
           <div className="bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg mb-4">
             HORÁRIOS E REDES SOCIAIS
           </div>
-          <div className="space-y-2">
+          <div className="space-y-2 text-white">
             <p>@NUMOLHO</p>
             <p>(81) 99968-9969 RETIRADA</p>
             <p>ENTREGAS PELO IFOOD</p>
@@ -86,7 +101,9 @@ export function Home() {
         </section>
       </main>
 
-      <CartButton />
+      <footer className="bg-black text-gray-400 py-6 px-4 text-center border-t border-yellow-500 mt-8">
+        <p>© {new Date().getFullYear()} Nu Molho. Todos os direitos reservados.</p>
+      </footer>
     </div>
   );
 }
