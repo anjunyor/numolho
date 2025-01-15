@@ -11,7 +11,6 @@ export function Home() {
         <img 
           src="https://drive.google.com/uc?export=view&id=1HZFGFmOt7dPdbk_UrGKdwkgN7o64HxHY" 
           alt="Nu Molho Logo" 
-          className="h-20 mx-auto mb-4"
         />
       </header>
 
