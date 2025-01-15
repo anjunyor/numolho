@@ -9,7 +9,7 @@ export function Home() {
     <div className="min-h-screen bg-black text-white">
       <header className="bg-black py-6 px-4 text-center border-b border-yellow-500">
         <img 
-          src="https://ibb.co/6vLTm48" 
+          src="https://i.ibb.co/ZH7FVhS/logo.png" 
           alt="Nu Molho Logo" 
           className="h-20 mx-auto mb-4"
         />
