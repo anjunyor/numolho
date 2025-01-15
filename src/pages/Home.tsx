@@ -11,7 +11,7 @@ export function Home() {
         <img 
           src="https://i.ibb.co/ZXPQ4Lv/logo.png" 
           alt="Nu Molho Logo" 
-          className="h-20 mx-auto mb-4"
+          className="h-32 mx-auto mb-4 object-contain"
         />
       </header>
 
@@ -23,15 +23,22 @@ export function Home() {
           </div>
           <div className="space-y-4">
             {hotdogs.map(item => (
-              <div key={item.id} className="block p-4 rounded-lg hover:bg-gray-900">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="font-bold text-yellow-500">{item.title}</h3>
-                    {item.description && (
-                      <p className="text-gray-400 text-sm mt-1">{item.description}</p>
-                    )}
+              <div key={item.id} className="flex gap-4 p-4 rounded-lg hover:bg-gray-900">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-24 h-24 object-cover rounded-lg"
+                />
+                <div className="flex-1">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="font-bold text-yellow-500">{item.title}</h3>
+                      {item.description && (
+                        <p className="text-gray-400 text-sm mt-1">{item.description}</p>
+                      )}
+                    </div>
+                    <span className="font-bold text-yellow-500">{item.price}</span>
                   </div>
-                  <span className="font-bold text-yellow-500">{item.price}</span>
                 </div>
               </div>
             ))}
@@ -45,12 +52,19 @@ export function Home() {
           </div>
           <div className="space-y-4">
             {bebidas.map(item => (
-              <div key={item.id} className="block p-4 rounded-lg hover:bg-gray-900">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="font-bold text-yellow-500">{item.title}</h3>
+              <div key={item.id} className="flex gap-4 p-4 rounded-lg hover:bg-gray-900">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-16 h-16 object-cover rounded-lg"
+                />
+                <div className="flex-1">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="font-bold text-yellow-500">{item.title}</h3>
+                    </div>
+                    <span className="font-bold text-yellow-500">{item.price}</span>
                   </div>
-                  <span className="font-bold text-yellow-500">{item.price}</span>
                 </div>
               </div>
             ))}
